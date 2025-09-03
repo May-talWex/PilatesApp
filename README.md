@@ -45,3 +45,33 @@ These features are intentionally not included in the MVP, but are potential cand
 - Save class plans or student profiles
 - Support for equipment based repertoire (Reformer, Cadillac, etc.)
 
+
+## Technology Stack
+
+### Core Framework & Development
+- **React Native + Expo** - Cross-platform mobile development with iPhone-first design
+- **TypeScript** - Type-safe development for better code quality and maintainability
+- **Expo EAS** - Build and deployment pipeline for TestFlight distribution
+
+### Navigation & State Management
+- **React Navigation (Native Stack)** - iOS-native navigation experience
+- **Zustand** - Lightweight global state management for app-wide data
+- **AsyncStorage** - Local persistence for user preferences and selected injuries
+
+### Data & Logic
+- **Static JSON files** - Offline-first data storage for exercises, injuries, and substitution rules
+- **Pure TypeScript services** - Business logic separation for substitution engine and data management
+
+### Testing & Quality Assurance
+- **Jest** - JavaScript testing framework for unit and integration tests
+- **@testing-library/react-native** - Component testing utilities for React Native
+- **TypeScript strict mode** - Enhanced type checking for runtime error prevention
+
+### Development Approach
+- **Modular component architecture** - Isolated, testable components for maintainable code
+- **Test-driven development** - Comprehensive test coverage for core functionality
+- **Incremental development** - Designed for 1-hour daily development sessions
+
+
+
+
