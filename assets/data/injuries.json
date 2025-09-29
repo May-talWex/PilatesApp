@@ -1,0 +1,39 @@
+{
+    "injuries": [
+        {
+            "id": "neck_injury",
+            "name": "Neck Injury",
+            "description": "Cervical spine issues, whiplash, or neck strain"
+        },
+        {
+            "id": "lower_back_injury",
+            "name": "Lower Back Injury",
+            "description": "Lumbar spine issues, herniated disc, or lower back strain"
+        },
+        {
+            "id": "shoulder_injury",
+            "name": "Shoulder Injury",
+            "description": "Rotator cuff, shoulder impingement, or shoulder instability"
+        },
+        {
+            "id": "hip_injury",
+            "name": "Hip Injury",
+            "description": "Hip flexor strain, hip impingement, or hip joint issues"
+        },
+        {
+            "id": "wrist_injury",
+            "name": "Wrist Injury",
+            "description": "Carpal tunnel, wrist strain, or wrist fracture recovery"
+        },
+        {
+            "id": "knee_injury",
+            "name": "Knee Injury",
+            "description": "Knee ligament issues, meniscus tears, or knee instability"
+        },
+        {
+            "id": "spine_injury",
+            "name": "General Spine Injury",
+            "description": "General spinal issues or vertebrae problems"
+        }
+    ]
+}

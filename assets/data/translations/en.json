@@ -1,0 +1,521 @@
+{
+    "exercises": {
+        "ex_hundred": {
+            "name": "The Hundred",
+            "description": "Classic Pilates breathing and core exercise with arm pumps",
+            "cues": [
+                "Curl up to shoulder blades",
+                "Pump arms vigorously 5-6 inches",
+                "Inhale for 5 counts, exhale for 5 counts",
+                "Keep lower back imprinted",
+                "Reach through fingertips"
+            ],
+            "commonMistakes": [
+                "Tensing neck and shoulders",
+                "Allowing lower back to arch",
+                "Holding breath",
+                "Pumping from elbows instead of shoulders"
+            ],
+            "concerns": {
+                "neck_injury": "Excessive neck flexion can strain cervical spine",
+                "lower_back_injury": "Hip flexor tension may increase lower back stress",
+                "shoulder_injury": "Arm pumping may aggravate shoulder"
+            }
+        },
+        "ex_roll_up": {
+            "name": "Roll Up",
+            "description": "Sequential spinal flexion from lying to seated",
+            "cues": [
+                "Arms overhead to start",
+                "Chin to chest, roll up one vertebra at a time",
+                "Reach for toes at the top",
+                "Roll down with control",
+                "Keep heels on mat"
+            ],
+            "commonMistakes": [
+                "Using momentum instead of control",
+                "Feet lifting off mat",
+                "Skipping vertebrae on the way up or down",
+                "Leading with shoulders instead of head"
+            ],
+            "concerns": {
+                "lower_back_injury": "Full spinal flexion may aggravate disc issues",
+                "neck_injury": "Initial head lift can strain neck",
+                "hip_flexor_strain": "Overuse of hip flexors to compensate"
+            }
+        },
+        "ex_leg_circles": {
+            "name": "Leg Circles",
+            "description": "Hip mobility exercise with one leg circling",
+            "cues": [
+                "Anchor pelvis and opposite hip",
+                "Circle leg across body, down, out and up",
+                "Keep circles controlled",
+                "Maintain neutral pelvis",
+                "Point through the toes"
+            ],
+            "commonMistakes": [
+                "Rocking pelvis side to side",
+                "Making circles too large",
+                "Bending knee of circling leg",
+                "Tensing shoulders"
+            ],
+            "concerns": {
+                "hip_injury": "May aggravate hip impingement",
+                "lower_back_injury": "Pelvis instability can stress lower back",
+                "knee_injury": "Locked knee may cause strain"
+            }
+        },
+        "ex_rolling_like_ball": {
+            "name": "Rolling Like a Ball",
+            "description": "Spinal massage and balance exercise",
+            "cues": [
+                "Balance on sit bones",
+                "Knees to chest, hands on shins",
+                "Roll back to shoulder blades",
+                "Roll up to balance without feet touching",
+                "Keep shape consistent"
+            ],
+            "commonMistakes": [
+                "Rolling onto neck",
+                "Using momentum instead of core",
+                "Losing C-curve shape",
+                "Feet touching floor"
+            ],
+            "concerns": {
+                "spine_injury": "Rolling on spine may be contraindicated",
+                "neck_injury": "Risk of rolling too far back",
+                "lower_back_injury": "Spinal flexion may aggravate condition"
+            }
+        },
+        "ex_single_leg_stretch": {
+            "name": "Single Leg Stretch",
+            "description": "Alternating leg exercise for core strength",
+            "cues": [
+                "Outside hand to ankle, inside hand to knee",
+                "Switch legs with control",
+                "Keep elbows wide",
+                "Maintain upper body curl",
+                "Pull knee to chest, extend other leg long"
+            ],
+            "commonMistakes": [
+                "Dropping head between switches",
+                "Incorrect hand placement",
+                "Lower back arching",
+                "Rushing the movement"
+            ],
+            "concerns": {
+                "neck_injury": "Sustained head lift may strain neck",
+                "lower_back_injury": "Extended leg position may stress back",
+                "knee_injury": "Hand pressure on knee"
+            }
+        },
+        "ex_double_leg_stretch": {
+            "name": "Double Leg Stretch",
+            "description": "Full body coordination exercise",
+            "cues": [
+                "Knees to chest to start",
+                "Extend arms and legs simultaneously",
+                "Circle arms around to return",
+                "Keep lower back connected",
+                "Maintain head and shoulder curl"
+            ],
+            "commonMistakes": [
+                "Legs dropping too low",
+                "Losing upper body curl",
+                "Arching lower back",
+                "Moving too quickly"
+            ],
+            "concerns": {
+                "neck_injury": "Sustained neck flexion",
+                "lower_back_injury": "Extended leg position increases load",
+                "shoulder_injury": "Overhead arm position"
+            }
+        },
+        "ex_scissors": {
+            "name": "Scissors",
+            "description": "Alternating leg stretches with hamstring focus",
+            "cues": [
+                "Pull one leg toward you twice",
+                "Keep both legs straight",
+                "Maintain upper body curl",
+                "Quick pulse-pulse-switch rhythm",
+                "Reach through pointed toes"
+            ],
+            "commonMistakes": [
+                "Bending knees",
+                "Dropping head",
+                "Losing rhythm",
+                "Lower back lifting"
+            ],
+            "concerns": {
+                "neck_injury": "Sustained head elevation",
+                "lower_back_injury": "Straight leg position stresses back",
+                "hamstring_injury": "Aggressive stretching"
+            }
+        },
+        "ex_lower_lift": {
+            "name": "Lower & Lift",
+            "description": "Lower abdominal strengthening",
+            "cues": [
+                "Legs to 90 degrees to start",
+                "Lower legs to 45 degrees",
+                "Lift back to 90",
+                "Keep lower back imprinted",
+                "Control the movement"
+            ],
+            "commonMistakes": [
+                "Arching lower back",
+                "Using momentum",
+                "Lowering legs too far",
+                "Holding breath"
+            ],
+            "concerns": {
+                "lower_back_injury": "High stress on lower back",
+                "hip_flexor_strain": "Overwork of hip flexors",
+                "neck_injury": "Optional head lift"
+            }
+        },
+        "ex_criss_cross": {
+            "name": "Criss Cross",
+            "description": "Oblique strengthening with rotation",
+            "cues": [
+                "Elbow to opposite knee",
+                "Extend other leg long",
+                "Hold rotation briefly",
+                "Keep elbows wide",
+                "Rotate from ribs, not neck"
+            ],
+            "commonMistakes": [
+                "Pulling on neck",
+                "Rushing through rotation",
+                "Dropping extended leg",
+                "Leading with elbow instead of shoulder"
+            ],
+            "concerns": {
+                "neck_injury": "Rotation with flexion",
+                "lower_back_injury": "Rotation under load"
+            }
+        },
+        "ex_spine_stretch_forward": {
+            "name": "Spine Stretch Forward",
+            "description": "Seated forward bend for spine and hamstrings",
+            "cues": [
+                "Sit tall with legs extended",
+                "Arms parallel to floor",
+                "Round forward from head",
+                "Reach past toes",
+                "Stack spine to return"
+            ],
+            "commonMistakes": [
+                "Rounding from lower back first",
+                "Bending knees",
+                "Collapsing chest",
+                "Leading with arms"
+            ],
+            "concerns": {
+                "lower_back_injury": "Forward flexion may aggravate",
+                "hamstring_injury": "Tight hamstrings limit movement"
+            }
+        },
+        "ex_corkscrew": {
+            "name": "Corkscrew",
+            "description": "Circular leg movement for obliques",
+            "cues": [
+                "Legs together to ceiling",
+                "Circle legs to right, down, left, up",
+                "Keep upper body stable",
+                "Reverse direction each time",
+                "Control the movement"
+            ],
+            "commonMistakes": [
+                "Shoulders lifting off mat",
+                "Using momentum",
+                "Circles too large",
+                "Arching back"
+            ],
+            "concerns": {
+                "lower_back_injury": "High load on lower back",
+                "neck_injury": "Tension from stabilizing",
+                "shoulder_injury": "Pressing into mat"
+            }
+        },
+        "ex_saw": {
+            "name": "Saw",
+            "description": "Rotation with forward bend",
+            "cues": [
+                "Arms out to sides",
+                "Rotate and reach pinky to little toe",
+                "Saw off the little toe",
+                "Keep opposite hip down",
+                "Return to center with lift"
+            ],
+            "commonMistakes": [
+                "Hip lifting off mat",
+                "Collapsing in rotation",
+                "Bending knees",
+                "Losing tall spine in center"
+            ],
+            "concerns": {
+                "lower_back_injury": "Rotation with flexion",
+                "shoulder_injury": "Reaching position"
+            }
+        },
+        "ex_single_leg_kick": {
+            "name": "Single Leg Kick",
+            "description": "Prone hamstring strengthening",
+            "cues": [
+                "Prop on forearms",
+                "Kick heel to bottom twice",
+                "Point then flex foot",
+                "Keep pelvis stable",
+                "Alternate legs with rhythm"
+            ],
+            "commonMistakes": [
+                "Dropping head",
+                "Pelvis rocking",
+                "Lower back arching",
+                "Losing rhythm"
+            ],
+            "concerns": {
+                "knee_injury": "Forced flexion of knee",
+                "lower_back_injury": "Extension position",
+                "shoulder_injury": "Weight bearing on arms"
+            }
+        },
+        "ex_side_kick": {
+            "name": "Side Kick Series",
+            "description": "Lateral hip strengthening series",
+            "cues": [
+                "Stack hips and shoulders",
+                "Leg at hip height",
+                "Kick forward and back",
+                "Keep torso still",
+                "Control the movement"
+            ],
+            "commonMistakes": [
+                "Rolling hips forward or back",
+                "Torso moving with leg",
+                "Leg dropping below hip",
+                "Using momentum"
+            ],
+            "concerns": {
+                "hip_injury": "May aggravate hip issues",
+                "lower_back_injury": "Side position may stress back",
+                "shoulder_injury": "Supporting on arm"
+            }
+        },
+        "ex_teaser": {
+            "name": "Teaser",
+            "description": "Advanced V-sit balance",
+            "cues": [
+                "Start lying with legs at 45 degrees",
+                "Roll up reaching arms to toes",
+                "Hold V position",
+                "Lower with control",
+                "Keep legs still throughout"
+            ],
+            "commonMistakes": [
+                "Using momentum",
+                "Bending knees",
+                "Dropping legs",
+                "Rounding lower back"
+            ],
+            "concerns": {
+                "lower_back_injury": "High stress on spine",
+                "neck_injury": "Strain from position",
+                "hip_flexor_strain": "Overwork of hip flexors"
+            }
+        },
+        "ex_seal": {
+            "name": "Seal",
+            "description": "Rolling exercise with clapping",
+            "cues": [
+                "Open knees, hold ankles",
+                "Clap feet 3 times",
+                "Roll back to shoulder blades",
+                "Roll up and clap 3 times",
+                "Find balance point"
+            ],
+            "commonMistakes": [
+                "Rolling onto neck",
+                "Losing clapping rhythm",
+                "Using momentum",
+                "Feet touching floor"
+            ],
+            "concerns": {
+                "spine_injury": "Rolling on spine",
+                "neck_injury": "Risk of rolling too far",
+                "lower_back_injury": "Spinal flexion"
+            }
+        },
+        "ex_push_up": {
+            "name": "Pilates Push-Up",
+            "description": "Standing to plank push-up sequence",
+            "cues": [
+                "Stand tall, roll down",
+                "Walk hands out to plank",
+                "3-5 push-ups",
+                "Walk hands back",
+                "Roll up to standing"
+            ],
+            "commonMistakes": [
+                "Sagging hips in plank",
+                "Elbows flaring wide",
+                "Rushing the sequence",
+                "Losing neutral spine"
+            ],
+            "concerns": {
+                "wrist_injury": "Weight bearing on wrists",
+                "shoulder_injury": "Push-up position stress",
+                "lower_back_injury": "Plank position"
+            }
+        }
+    },
+    "modifications": {
+        "mod_head_down": {
+            "name": "Head Down",
+            "description": "Keep head resting on mat throughout exercise"
+        },
+        "mod_head_support": {
+            "name": "Head Support",
+            "description": "Place small pillow or towel under head"
+        },
+        "mod_bent_knees_feet_down": {
+            "name": "Bent Knees, Feet Down",
+            "description": "Keep knees bent at 90 degrees with feet flat on floor"
+        },
+        "mod_arms_still": {
+            "name": "Arms Still",
+            "description": "Keep arms quietly by sides instead of pumping"
+        },
+        "mod_assisted_band": {
+            "name": "Band Assisted",
+            "description": "Use resistance band around feet for assistance"
+        },
+        "mod_half_roll_back": {
+            "name": "Half Roll Back",
+            "description": "Only roll halfway back instead of all the way down"
+        },
+        "mod_hands_behind_thighs": {
+            "name": "Hands Behind Thighs",
+            "description": "Hold behind thighs for support"
+        },
+        "mod_bent_knees": {
+            "name": "Bent Knees",
+            "description": "Keep knees slightly bent throughout"
+        },
+        "mod_smaller_circles": {
+            "name": "Smaller Circles",
+            "description": "Make smaller circles to reduce range of motion"
+        },
+        "mod_bent_supporting_knee": {
+            "name": "Bent Supporting Knee",
+            "description": "Bend the knee of the supporting leg"
+        },
+        "mod_hands_under_pelvis": {
+            "name": "Hands Under Pelvis",
+            "description": "Place hands under pelvis for support"
+        },
+        "mod_micro_bend_knee": {
+            "name": "Micro Bend in Knee",
+            "description": "Keep a slight bend in the knee"
+        },
+        "mod_higher_leg_position": {
+            "name": "Higher Leg Position",
+            "description": "Keep legs at a higher angle to reduce stress"
+        },
+        "mod_45_degree_legs": {
+            "name": "45 Degree Legs",
+            "description": "Keep legs at 45 degrees instead of extending lower"
+        },
+        "mod_arms_forward": {
+            "name": "Arms Forward",
+            "description": "Reach arms forward instead of overhead"
+        },
+        "mod_use_strap": {
+            "name": "Use Strap",
+            "description": "Use a strap around foot for assistance"
+        },
+        "mod_smaller_range": {
+            "name": "Smaller Range",
+            "description": "Reduce the range of motion"
+        },
+        "mod_feet_on_floor": {
+            "name": "Feet on Floor",
+            "description": "Keep feet on floor throughout"
+        },
+        "mod_hands_support_head": {
+            "name": "Support Head with Hands",
+            "description": "Keep hands supporting head, don't pull"
+        },
+        "mod_sit_on_block": {
+            "name": "Sit on Block",
+            "description": "Sit on yoga block or cushion to elevate hips"
+        },
+        "mod_arms_bent": {
+            "name": "Bent Arms",
+            "description": "Keep arms bent at elbows"
+        },
+        "mod_smaller_rotation": {
+            "name": "Smaller Rotation",
+            "description": "Reduce the degree of rotation"
+        },
+        "mod_arms_crossed": {
+            "name": "Arms Crossed",
+            "description": "Cross arms over chest"
+        },
+        "mod_smaller_kicks": {
+            "name": "Smaller Kicks",
+            "description": "Reduce the kicking range"
+        },
+        "mod_lower_upper_body": {
+            "name": "Lower Upper Body",
+            "description": "Keep upper body lower to reduce back extension"
+        },
+        "mod_hands_stacked": {
+            "name": "Hands Stacked",
+            "description": "Stack hands under forehead"
+        },
+        "mod_support_head": {
+            "name": "Support Head",
+            "description": "Use bottom arm to support head"
+        },
+        "mod_bottom_leg_bent": {
+            "name": "Bottom Leg Bent",
+            "description": "Bend bottom leg for stability"
+        },
+        "mod_head_on_arm": {
+            "name": "Head on Arm",
+            "description": "Rest head on extended bottom arm"
+        },
+        "mod_on_fists": {
+            "name": "On Fists",
+            "description": "Perform push-ups on fists instead of flat hands"
+        },
+        "mod_wall_pushup": {
+            "name": "Wall Push-Up",
+            "description": "Perform push-ups against a wall"
+        },
+        "mod_knees_down": {
+            "name": "Knees Down",
+            "description": "Perform push-ups from knees"
+        }
+    },
+    "ui": {
+        "startLesson": "Start Lesson",
+        "selectInjuries": "Select Injuries Present in Class",
+        "exercise": "Exercise",
+        "modification": "Modification",
+        "alternative": "Alternative",
+        "repetitions": "Repetitions",
+        "duration": "Duration",
+        "next": "Next",
+        "previous": "Previous",
+        "complete": "Complete",
+        "viewModifications": "View Modifications",
+        "originalExercise": "Original Exercise",
+        "suggestedAlternative": "Suggested Alternative",
+        "reason": "Reason"
+    }
+}

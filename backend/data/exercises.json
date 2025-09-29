@@ -1,0 +1,1053 @@
+{
+    "exercises": [
+        {
+            "id": "ex_hundred",
+            "category": "core_strengthening",
+            "difficulty": "beginner",
+            "sequenceOrder": 1,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "shoulders",
+                    "neck_flexors"
+                ]
+            },
+            "goals": [
+                "core_strength",
+                "breathing",
+                "circulation",
+                "stamina",
+                "warm_up"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "100",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_down",
+                            "type": "position_change"
+                        },
+                        {
+                            "modificationId": "mod_head_support",
+                            "type": "prop_assistance"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_chest_lift"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_knees_feet_down",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_dead_bug"
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_arms_still",
+                            "type": "movement_adaptation"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_roll_up",
+            "category": "spinal_articulation",
+            "difficulty": "beginner",
+            "sequenceOrder": 2,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "spinal_erectors",
+                    "hamstrings"
+                ]
+            },
+            "goals": [
+                "spinal_mobility",
+                "core_strength",
+                "flexibility",
+                "articulation"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 90,
+            "repetitions": "5-8",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_assisted_band",
+                            "type": "assisted"
+                        },
+                        {
+                            "modificationId": "mod_half_roll_back",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_chest_lift"
+                },
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_hands_behind_thighs",
+                            "type": "assisted"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_spine_stretch_forward"
+                },
+                {
+                    "injuryId": "hip_flexor_strain",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_knees",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_leg_circles",
+            "category": "hip_mobility",
+            "difficulty": "beginner",
+            "sequenceOrder": 3,
+            "muscleGroups": {
+                "primary": [
+                    "hip_flexors",
+                    "abdominals"
+                ],
+                "secondary": [
+                    "quadriceps",
+                    "hip_abductors",
+                    "hip_adductors"
+                ]
+            },
+            "goals": [
+                "hip_mobility",
+                "core_stability",
+                "leg_strength",
+                "circulation"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 120,
+            "repetitions": "5-8_each_direction_each_leg",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "hip_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_smaller_circles",
+                            "type": "range_reduction"
+                        },
+                        {
+                            "modificationId": "mod_bent_supporting_knee",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_knee_folds"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_supporting_knee",
+                            "type": "position_change"
+                        },
+                        {
+                            "modificationId": "mod_hands_under_pelvis",
+                            "type": "prop_assistance"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                },
+                {
+                    "injuryId": "knee_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_micro_bend_knee",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_rolling_like_ball",
+            "category": "spinal_massage",
+            "difficulty": "beginner",
+            "sequenceOrder": 4,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals"
+                ],
+                "secondary": [
+                    "hip_flexors",
+                    "spinal_erectors"
+                ]
+            },
+            "goals": [
+                "core_control",
+                "balance",
+                "spinal_massage",
+                "coordination"
+            ],
+            "startingPosition": "seated",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "6-8",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "spine_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_core_work"
+                },
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_core_work"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_core_work"
+                },
+                {
+                    "injuryId": "osteoporosis",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_core_work"
+                }
+            ]
+        },
+        {
+            "id": "ex_single_leg_stretch",
+            "category": "core_strengthening",
+            "difficulty": "beginner",
+            "sequenceOrder": 5,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "quadriceps",
+                    "neck_flexors"
+                ]
+            },
+            "goals": [
+                "core_strength",
+                "coordination",
+                "hip_flexibility",
+                "stamina"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "8-10_each_side",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_down",
+                            "type": "position_change"
+                        },
+                        {
+                            "modificationId": "mod_head_support",
+                            "type": "prop_assistance"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_higher_leg_position",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_dead_bug"
+                },
+                {
+                    "injuryId": "knee_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_hands_behind_thigh",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_double_leg_stretch",
+            "category": "core_strengthening",
+            "difficulty": "beginner",
+            "sequenceOrder": 6,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "shoulders",
+                    "neck_flexors",
+                    "quadriceps"
+                ]
+            },
+            "goals": [
+                "core_strength",
+                "coordination",
+                "full_body_integration",
+                "stamina"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "5-8",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_down",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_single_leg_stretch"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_higher_leg_position",
+                            "type": "range_reduction"
+                        },
+                        {
+                            "modificationId": "mod_45_degree_legs",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_single_leg_stretch"
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_arms_forward",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_scissors",
+            "category": "core_strengthening",
+            "difficulty": "beginner",
+            "sequenceOrder": 7,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "hamstrings",
+                    "neck_flexors"
+                ]
+            },
+            "goals": [
+                "core_strength",
+                "hamstring_flexibility",
+                "coordination",
+                "control"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "8-10_each_leg",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_down",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_single_leg_stretch"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_single_leg_stretch"
+                },
+                {
+                    "injuryId": "hamstring_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_knees",
+                            "type": "range_reduction"
+                        },
+                        {
+                            "modificationId": "mod_use_strap",
+                            "type": "prop_assistance"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_lower_lift",
+            "category": "core_strengthening",
+            "difficulty": "intermediate",
+            "sequenceOrder": 8,
+            "muscleGroups": {
+                "primary": [
+                    "lower_abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "quadriceps",
+                    "inner_thighs"
+                ]
+            },
+            "goals": [
+                "lower_ab_strength",
+                "core_control",
+                "leg_strength"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "5-8",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_dead_bug"
+                },
+                {
+                    "injuryId": "hip_flexor_strain",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_smaller_range",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_toe_taps"
+                },
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_down",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_criss_cross",
+            "category": "core_strengthening",
+            "difficulty": "beginner",
+            "sequenceOrder": 9,
+            "muscleGroups": {
+                "primary": [
+                    "obliques",
+                    "abdominals"
+                ],
+                "secondary": [
+                    "hip_flexors",
+                    "neck_flexors"
+                ]
+            },
+            "goals": [
+                "oblique_strength",
+                "rotation",
+                "core_strength",
+                "coordination"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "5-8_each_side",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_hands_support_head",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_oblique_prep"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_feet_on_floor",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_oblique_prep"
+                }
+            ]
+        },
+        {
+            "id": "ex_spine_stretch_forward",
+            "category": "spinal_articulation",
+            "difficulty": "beginner",
+            "sequenceOrder": 10,
+            "muscleGroups": {
+                "primary": [
+                    "spinal_erectors",
+                    "hamstrings"
+                ],
+                "secondary": [
+                    "abdominals",
+                    "shoulders"
+                ]
+            },
+            "goals": [
+                "spinal_flexibility",
+                "hamstring_stretch",
+                "posture",
+                "breathing"
+            ],
+            "startingPosition": "seated",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 90,
+            "repetitions": "3-5",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_knees",
+                            "type": "position_change"
+                        },
+                        {
+                            "modificationId": "mod_sit_on_block",
+                            "type": "prop_assistance"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                },
+                {
+                    "injuryId": "hamstring_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_knees",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_corkscrew",
+            "category": "core_strengthening",
+            "difficulty": "intermediate",
+            "sequenceOrder": 11,
+            "muscleGroups": {
+                "primary": [
+                    "obliques",
+                    "lower_abdominals"
+                ],
+                "secondary": [
+                    "hip_flexors",
+                    "inner_thighs"
+                ]
+            },
+            "goals": [
+                "oblique_strength",
+                "core_control",
+                "hip_mobility",
+                "coordination"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "3-5_each_direction",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_leg_circles"
+                },
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_down",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_arms_bent",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_saw",
+            "category": "rotation",
+            "difficulty": "beginner",
+            "sequenceOrder": 12,
+            "muscleGroups": {
+                "primary": [
+                    "obliques",
+                    "hamstrings"
+                ],
+                "secondary": [
+                    "spinal_erectors",
+                    "shoulders"
+                ]
+            },
+            "goals": [
+                "rotation",
+                "hamstring_flexibility",
+                "oblique_strength",
+                "posture"
+            ],
+            "startingPosition": "seated",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 90,
+            "repetitions": "3-5_each_side",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_bent_knees",
+                            "type": "position_change"
+                        },
+                        {
+                            "modificationId": "mod_smaller_rotation",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_spine_twist"
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_arms_crossed",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_single_leg_kick",
+            "category": "back_extension",
+            "difficulty": "beginner",
+            "sequenceOrder": 13,
+            "muscleGroups": {
+                "primary": [
+                    "hamstrings",
+                    "glutes"
+                ],
+                "secondary": [
+                    "spinal_erectors",
+                    "shoulders"
+                ]
+            },
+            "goals": [
+                "hamstring_strength",
+                "back_extension",
+                "hip_extension",
+                "coordination"
+            ],
+            "startingPosition": "prone",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "5-8_each_leg",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "knee_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_smaller_kicks",
+                            "type": "range_reduction"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_swimming_prep"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_lower_upper_body",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_hands_stacked",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_side_kick",
+            "category": "lateral_work",
+            "difficulty": "beginner",
+            "sequenceOrder": 14,
+            "muscleGroups": {
+                "primary": [
+                    "hip_abductors",
+                    "hip_adductors"
+                ],
+                "secondary": [
+                    "obliques",
+                    "glutes"
+                ]
+            },
+            "goals": [
+                "hip_strength",
+                "balance",
+                "core_stability",
+                "leg_toning"
+            ],
+            "startingPosition": "side_lying",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 120,
+            "repetitions": "8-10_each_leg",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "hip_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_smaller_range",
+                            "type": "range_reduction"
+                        },
+                        {
+                            "modificationId": "mod_bent_knee",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_clam"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_support_head",
+                            "type": "prop_assistance"
+                        },
+                        {
+                            "modificationId": "mod_bottom_leg_bent",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "low",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_head_on_arm",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_teaser",
+            "category": "core_integration",
+            "difficulty": "intermediate",
+            "sequenceOrder": 15,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals",
+                    "hip_flexors"
+                ],
+                "secondary": [
+                    "quadriceps",
+                    "shoulders",
+                    "spinal_erectors"
+                ]
+            },
+            "goals": [
+                "core_strength",
+                "balance",
+                "control",
+                "full_body_integration"
+            ],
+            "startingPosition": "supine",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 90,
+            "repetitions": "3-5",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_half_teaser"
+                },
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_hands_behind_thighs",
+                            "type": "assisted"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_half_teaser"
+                },
+                {
+                    "injuryId": "hip_flexor_strain",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_half_teaser"
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_arms_crossed",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        },
+        {
+            "id": "ex_seal",
+            "category": "spinal_massage",
+            "difficulty": "beginner",
+            "sequenceOrder": 16,
+            "muscleGroups": {
+                "primary": [
+                    "abdominals"
+                ],
+                "secondary": [
+                    "hip_flexors",
+                    "inner_thighs"
+                ]
+            },
+            "goals": [
+                "core_control",
+                "balance",
+                "spinal_massage",
+                "playfulness"
+            ],
+            "startingPosition": "seated",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 60,
+            "repetitions": "6-8_with_3_claps",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "spine_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_balance"
+                },
+                {
+                    "injuryId": "neck_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_balance"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "high",
+                    "modifications": [],
+                    "alternativeExerciseId": "ex_seated_balance"
+                }
+            ]
+        },
+        {
+            "id": "ex_push_up",
+            "category": "upper_body_strength",
+            "difficulty": "beginner",
+            "sequenceOrder": 17,
+            "muscleGroups": {
+                "primary": [
+                    "chest",
+                    "triceps",
+                    "shoulders"
+                ],
+                "secondary": [
+                    "abdominals",
+                    "spinal_erectors"
+                ]
+            },
+            "goals": [
+                "upper_body_strength",
+                "core_stability",
+                "functional_strength"
+            ],
+            "startingPosition": "standing",
+            "equipment": [
+                "mat"
+            ],
+            "duration": 90,
+            "repetitions": "3-5",
+            "injuryConsiderations": [
+                {
+                    "injuryId": "wrist_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_on_fists",
+                            "type": "position_change"
+                        },
+                        {
+                            "modificationId": "mod_wall_pushup",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_chest_expansion"
+                },
+                {
+                    "injuryId": "shoulder_injury",
+                    "severity": "high",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_wall_pushup",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": "ex_chest_expansion"
+                },
+                {
+                    "injuryId": "lower_back_injury",
+                    "severity": "medium",
+                    "modifications": [
+                        {
+                            "modificationId": "mod_knees_down",
+                            "type": "position_change"
+                        }
+                    ],
+                    "alternativeExerciseId": null
+                }
+            ]
+        }
+    ]
+}

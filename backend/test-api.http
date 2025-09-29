@@ -1,0 +1,85 @@
+### Pilates App API Testing
+
+# Health Check
+GET http://localhost:3000/api/health
+
+###
+
+# Get All Exercises (English)
+GET http://localhost:3000/api/exercises?lang=en
+
+###
+
+# Get All Exercises (Hebrew)
+GET http://localhost:3000/api/exercises?lang=he
+
+###
+
+# Get Specific Exercise - The Hundred (English)
+GET http://localhost:3000/api/exercises/ex_hundred?lang=en
+
+###
+
+# Get Specific Exercise - The Hundred (Hebrew)
+GET http://localhost:3000/api/exercises/ex_hundred?lang=he
+
+###
+
+# Get Modifications for The Hundred with Neck Injury (English)
+GET http://localhost:3000/api/modifications?exerciseId=ex_hundred&injuryId=neck_injury&lang=en
+
+###
+
+# Get Modifications for The Hundred with Neck Injury (Hebrew)
+GET http://localhost:3000/api/modifications?exerciseId=ex_hundred&injuryId=neck_injury&lang=he
+
+###
+
+# Get Modifications - Alternative Route Format
+GET http://localhost:3000/api/modifications/ex_hundred/neck_injury?lang=en
+
+###
+
+# Get Modifications for Roll Up with Lower Back Injury
+GET http://localhost:3000/api/modifications?exerciseId=ex_roll_up&injuryId=lower_back_injury&lang=en
+
+###
+
+# Get Modifications for Leg Circles with Hip Injury
+GET http://localhost:3000/api/modifications?exerciseId=ex_leg_circles&injuryId=hip_injury&lang=en
+
+###
+
+# Test Error - Non-existent Exercise
+GET http://localhost:3000/api/exercises/non_existent?lang=en
+
+###
+
+# Test Error - Non-existent Injury
+GET http://localhost:3000/api/modifications?exerciseId=ex_hundred&injuryId=non_existent&lang=en
+
+###
+
+# Test Error - Missing Parameters
+GET http://localhost:3000/api/modifications?lang=en
+
+###
+
+# Get Modifications for Exercise with High Severity Injury (Rolling Like a Ball with Spine Injury)
+GET http://localhost:3000/api/modifications?exerciseId=ex_rolling_like_ball&injuryId=spine_injury&lang=en
+
+###
+
+# Get Modifications for Exercise with Alternative (Lower & Lift with Lower Back Injury)
+GET http://localhost:3000/api/modifications?exerciseId=ex_lower_lift&injuryId=lower_back_injury&lang=en
+
+###
+
+# Get Modifications for Push Up with Wrist Injury
+GET http://localhost:3000/api/modifications?exerciseId=ex_push_up&injuryId=wrist_injury&lang=en
+
+###
+
+# Get Modifications for Side Kick with Hip Injury
+GET http://localhost:3000/api/modifications?exerciseId=ex_side_kick&injuryId=hip_injury&lang=en
+

@@ -1,0 +1,520 @@
+openapi: 3.0.3
+info:
+  title: Pilates App API
+  description: |
+    A comprehensive API for Pilates instructors to get exercise modifications based on student injuries.
+    
+    This API provides:
+    - Exercise information with detailed descriptions and cues
+    - Injury-specific modifications for exercises
+    - Multi-language support (English and Hebrew)
+    - Alternative exercise recommendations
+    
+    Perfect for Pilates instructors who need to adapt their classes for students with injuries.
+  version: 1.0.0
+  contact:
+    name: Pilates App Team
+    email: support@pilatesapp.com
+  license:
+    name: MIT
+    url: https://opensource.org/licenses/MIT
+
+servers:
+  - url: http://localhost:3000/api
+    description: Development server
+  - url: https://api.pilatesapp.com/api
+    description: Production server
+
+tags:
+  - name: Health
+    description: Health check endpoints
+  - name: Exercises
+    description: Exercise management and information
+  - name: Modifications
+    description: Injury-specific exercise modifications
+
+paths:
+  /health:
+    get:
+      tags:
+        - Health
+      summary: Health Check
+      description: Check if the API server is running and healthy
+      operationId: healthCheck
+      responses:
+        '200':
+          description: Server is healthy
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: OK
+                  timestamp:
+                    type: string
+                    format: date-time
+                    example: "2024-01-15T10:30:00.000Z"
+                  service:
+                    type: string
+                    example: Pilates App Backend
+
+  /exercises:
+    get:
+      tags:
+        - Exercises
+      summary: Get All Exercises
+      description: Retrieve all available Pilates exercises with translations
+      operationId: getAllExercises
+      parameters:
+        - name: lang
+          in: query
+          description: Language code for translations
+          required: false
+          schema:
+            type: string
+            enum: [en, he]
+            default: en
+          example: en
+      responses:
+        '200':
+          description: List of exercises retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Exercise'
+                  count:
+                    type: integer
+                    example: 17
+                  language:
+                    type: string
+                    example: en
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /exercises/{id}:
+    get:
+      tags:
+        - Exercises
+      summary: Get Exercise by ID
+      description: Retrieve a specific exercise by its ID with translations
+      operationId: getExerciseById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Exercise ID
+          schema:
+            type: string
+          example: ex_hundred
+        - name: lang
+          in: query
+          description: Language code for translations
+          required: false
+          schema:
+            type: string
+            enum: [en, he]
+            default: en
+          example: en
+      responses:
+        '200':
+          description: Exercise retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '#/components/schemas/Exercise'
+                  language:
+                    type: string
+                    example: en
+        '404':
+          description: Exercise not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /modifications:
+    get:
+      tags:
+        - Modifications
+      summary: Get Exercise Modifications
+      description: Get modifications for a specific exercise and injury combination
+      operationId: getModifications
+      parameters:
+        - name: exerciseId
+          in: query
+          required: true
+          description: Exercise ID
+          schema:
+            type: string
+          example: ex_hundred
+        - name: injuryId
+          in: query
+          required: true
+          description: Injury ID
+          schema:
+            type: string
+          example: neck_injury
+        - name: lang
+          in: query
+          description: Language code for translations
+          required: false
+          schema:
+            type: string
+            enum: [en, he]
+            default: en
+          example: en
+      responses:
+        '200':
+          description: Modifications retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '#/components/schemas/ModificationResponse'
+                  language:
+                    type: string
+                    example: en
+        '400':
+          description: Bad request - missing required parameters
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /modifications/{exerciseId}/{injuryId}:
+    get:
+      tags:
+        - Modifications
+      summary: Get Exercise Modifications (Alternative Route)
+      description: Alternative route format for getting modifications
+      operationId: getModificationsAlternative
+      parameters:
+        - name: exerciseId
+          in: path
+          required: true
+          description: Exercise ID
+          schema:
+            type: string
+          example: ex_hundred
+        - name: injuryId
+          in: path
+          required: true
+          description: Injury ID
+          schema:
+            type: string
+          example: neck_injury
+        - name: lang
+          in: query
+          description: Language code for translations
+          required: false
+          schema:
+            type: string
+            enum: [en, he]
+            default: en
+          example: en
+      responses:
+        '200':
+          description: Modifications retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  success:
+                    type: boolean
+                    example: true
+                  data:
+                    $ref: '#/components/schemas/ModificationResponse'
+                  language:
+                    type: string
+                    example: en
+        '500':
+          description: Internal server error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  schemas:
+    Exercise:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique exercise identifier
+          example: ex_hundred
+        name:
+          type: string
+          description: Exercise name
+          example: The Hundred
+        description:
+          type: string
+          description: Exercise description
+          example: Classic Pilates breathing and core exercise with arm pumps
+        category:
+          type: string
+          description: Exercise category
+          example: core_strengthening
+        difficulty:
+          type: string
+          enum: [beginner, intermediate, advanced]
+          description: Exercise difficulty level
+          example: beginner
+        sequenceOrder:
+          type: integer
+          description: Order in typical Pilates sequence
+          example: 1
+        muscleGroups:
+          type: object
+          properties:
+            primary:
+              type: array
+              items:
+                type: string
+              example: [abdominals, hip_flexors]
+            secondary:
+              type: array
+              items:
+                type: string
+              example: [shoulders, neck_flexors]
+        goals:
+          type: array
+          items:
+            type: string
+          example: [core_strength, breathing, circulation]
+        startingPosition:
+          type: string
+          description: Starting position for the exercise
+          example: supine
+        equipment:
+          type: array
+          items:
+            type: string
+          example: [mat]
+        duration:
+          type: integer
+          description: Exercise duration in seconds
+          example: 60
+        repetitions:
+          type: string
+          description: Number of repetitions
+          example: "100"
+        cues:
+          type: array
+          items:
+            type: string
+          description: Instructor cues for the exercise
+          example: ["Curl up to shoulder blades", "Pump arms vigorously 5-6 inches"]
+        commonMistakes:
+          type: array
+          items:
+            type: string
+          description: Common mistakes to avoid
+          example: ["Tensing neck and shoulders", "Allowing lower back to arch"]
+        concerns:
+          type: object
+          additionalProperties:
+            type: string
+          description: Injury-specific concerns
+          example:
+            neck_injury: "Excessive neck flexion can strain cervical spine"
+        injuryConsiderations:
+          type: array
+          items:
+            $ref: '#/components/schemas/InjuryConsideration'
+
+    InjuryConsideration:
+      type: object
+      properties:
+        injuryId:
+          type: string
+          example: neck_injury
+        injuryName:
+          type: string
+          example: Neck Injury
+        injuryDescription:
+          type: string
+          example: Cervical spine issues, whiplash, or neck strain
+        severity:
+          type: string
+          enum: [low, medium, high]
+          example: high
+        modifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/Modification'
+        alternativeExerciseId:
+          type: string
+          nullable: true
+          example: ex_chest_lift
+
+    Modification:
+      type: object
+      properties:
+        id:
+          type: string
+          example: mod_head_down
+        name:
+          type: string
+          example: Head Down
+        description:
+          type: string
+          example: Keep head resting on mat throughout exercise
+        type:
+          type: string
+          enum: [position_change, prop_assistance, range_reduction, movement_adaptation, assisted]
+          example: position_change
+
+    ModificationResponse:
+      type: object
+      properties:
+        exerciseId:
+          type: string
+          example: ex_hundred
+        exerciseName:
+          type: string
+          example: The Hundred
+        injuryId:
+          type: string
+          example: neck_injury
+        injuryName:
+          type: string
+          example: Neck Injury
+        injuryDescription:
+          type: string
+          example: Cervical spine issues, whiplash, or neck strain
+        severity:
+          type: string
+          enum: [low, medium, high, unknown]
+          example: high
+        hasModifications:
+          type: boolean
+          example: true
+        modifications:
+          type: array
+          items:
+            $ref: '#/components/schemas/Modification'
+        alternativeExercise:
+          type: object
+          nullable: true
+          properties:
+            id:
+              type: string
+              example: ex_chest_lift
+            name:
+              type: string
+              example: Chest Lift
+            description:
+              type: string
+              example: Alternative exercise description
+            category:
+              type: string
+              example: core_strengthening
+            difficulty:
+              type: string
+              example: beginner
+        recommendation:
+          type: string
+          enum: [proceed_with_caution, use_modifications, use_alternative, avoid_exercise]
+          example: use_modifications
+
+    Error:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: false
+        error:
+          type: string
+          example: Exercise not found
+        message:
+          type: string
+          example: No exercise found with ID: ex_invalid
+
+  examples:
+    ExerciseExample:
+      summary: The Hundred Exercise
+      value:
+        id: ex_hundred
+        name: The Hundred
+        description: Classic Pilates breathing and core exercise with arm pumps
+        category: core_strengthening
+        difficulty: beginner
+        sequenceOrder: 1
+        muscleGroups:
+          primary: [abdominals, hip_flexors]
+          secondary: [shoulders, neck_flexors]
+        goals: [core_strength, breathing, circulation, stamina, warm_up]
+        startingPosition: supine
+        equipment: [mat]
+        duration: 60
+        repetitions: "100"
+        cues:
+          - "Curl up to shoulder blades"
+          - "Pump arms vigorously 5-6 inches"
+          - "Inhale for 5 counts, exhale for 5 counts"
+        commonMistakes:
+          - "Tensing neck and shoulders"
+          - "Allowing lower back to arch"
+        concerns:
+          neck_injury: "Excessive neck flexion can strain cervical spine"
+          lower_back_injury: "Hip flexor tension may increase lower back stress"
+
+    ModificationExample:
+      summary: Neck Injury Modifications for The Hundred
+      value:
+        exerciseId: ex_hundred
+        exerciseName: The Hundred
+        injuryId: neck_injury
+        injuryName: Neck Injury
+        severity: high
+        hasModifications: true
+        modifications:
+          - id: mod_head_down
+            name: Head Down
+            description: Keep head resting on mat throughout exercise
+            type: position_change
+          - id: mod_head_support
+            name: Head Support
+            description: Place small pillow or towel under head
+            type: prop_assistance
+        recommendation: use_modifications
+
