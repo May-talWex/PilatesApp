@@ -13,10 +13,22 @@ const data = loadData();
 router.get('/', (req, res) => {
     try {
         const { lang = 'en' } = req.query;
+        const injuryTranslations = data.translations?.[lang]?.injuries ?? {};
+
+        const injuries = data.injuries.map(injury => {
+            const t = injuryTranslations[injury.id];
+            if (!t) return injury;
+            return {
+                ...injury,
+                name: t.name ?? injury.name,
+                description: t.description ?? injury.description,
+            };
+        });
+
         res.json({
             success: true,
-            data: data.injuries,
-            count: data.injuries.length,
+            data: injuries,
+            count: injuries.length,
             language: lang,
         });
     } catch (error) {

@@ -79,7 +79,8 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
       // Injuries fall back to the hardcoded list if the backend is unreachable
       // so the app stays functional during a live class.
       const [exercises, injuries] = await Promise.all([
-        apiService.getExercises(state.language).catch(() => []),
+        // Exercises always in English — classical Pilates names are internationally English.
+        apiService.getExercises('en').catch(() => []),
         apiService.getInjuries(state.language).catch(() => FALLBACK_INJURIES),
       ]);
 
