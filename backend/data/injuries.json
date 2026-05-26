@@ -34,6 +34,21 @@
             "id": "spine_injury",
             "name": "General Spine Injury",
             "description": "General spinal issues or vertebrae problems"
+        },
+        {
+            "id": "hamstring_injury",
+            "name": "Hamstring Injury",
+            "description": "Hamstring strain, tear, or chronic tightness affecting the posterior thigh"
+        },
+        {
+            "id": "hip_flexor_strain",
+            "name": "Hip Flexor Strain",
+            "description": "Iliopsoas or rectus femoris strain or overuse from repetitive hip flexion loading"
+        },
+        {
+            "id": "osteoporosis",
+            "name": "Osteoporosis",
+            "description": "Reduced bone density requiring avoidance of high-impact loading and extreme spinal flexion"
         }
     ]
 }

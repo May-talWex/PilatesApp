@@ -54,23 +54,33 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
     dispatch({ type: 'SET_SELECTED_INJURIES', payload: injuries });
   };
 
+  /**
+   * Fallback injury list used when the backend is unreachable.
+   * The app must remain functional during a live class even if connectivity drops.
+   */
+  const FALLBACK_INJURIES: Injury[] = [
+    { id: 'neck_injury', name: 'Neck Injury', description: 'Cervical spine issues, whiplash, or neck strain' },
+    { id: 'lower_back_injury', name: 'Lower Back Injury', description: 'Lumbar spine issues, herniated disc, or lower back strain' },
+    { id: 'shoulder_injury', name: 'Shoulder Injury', description: 'Rotator cuff, shoulder impingement, or shoulder instability' },
+    { id: 'hip_injury', name: 'Hip Injury', description: 'Hip flexor strain, hip impingement, or hip joint issues' },
+    { id: 'wrist_injury', name: 'Wrist Injury', description: 'Carpal tunnel, wrist strain, or wrist fracture recovery' },
+    { id: 'knee_injury', name: 'Knee Injury', description: 'Knee ligament issues, meniscus tears, or knee instability' },
+    { id: 'spine_injury', name: 'General Spine Injury', description: 'General spinal issues or vertebrae problems' },
+    { id: 'hamstring_injury', name: 'Hamstring Injury', description: 'Hamstring strain, tear, or chronic tightness affecting the posterior thigh' },
+    { id: 'hip_flexor_strain', name: 'Hip Flexor Strain', description: 'Iliopsoas or rectus femoris strain or overuse from repetitive hip flexion loading' },
+    { id: 'osteoporosis', name: 'Osteoporosis', description: 'Reduced bone density requiring avoidance of high-impact loading and extreme spinal flexion' },
+  ];
+
   const loadData = async () => {
     try {
       dispatch({ type: 'SET_LOADING', payload: true });
-      
-      // Load exercises and injuries in parallel
+
+      // Fetch exercises and injuries from the API in parallel.
+      // Injuries fall back to the hardcoded list if the backend is unreachable
+      // so the app stays functional during a live class.
       const [exercises, injuries] = await Promise.all([
         apiService.getExercises(state.language),
-        // For now, we'll use a static list of injuries since we don't have an endpoint
-        Promise.resolve([
-          { id: 'neck_injury', name: 'Neck Injury', description: 'Cervical spine issues, whiplash, or neck strain' },
-          { id: 'lower_back_injury', name: 'Lower Back Injury', description: 'Lumbar spine issues, herniated disc, or lower back strain' },
-          { id: 'shoulder_injury', name: 'Shoulder Injury', description: 'Rotator cuff, shoulder impingement, or shoulder instability' },
-          { id: 'hip_injury', name: 'Hip Injury', description: 'Hip flexor strain, hip impingement, or hip joint issues' },
-          { id: 'wrist_injury', name: 'Wrist Injury', description: 'Carpal tunnel, wrist strain, or wrist fracture recovery' },
-          { id: 'knee_injury', name: 'Knee Injury', description: 'Knee ligament issues, meniscus tears, or knee instability' },
-          { id: 'spine_injury', name: 'General Spine Injury', description: 'General spinal issues or vertebrae problems' }
-        ])
+        apiService.getInjuries(state.language).catch(() => FALLBACK_INJURIES),
       ]);
 
       dispatch({ type: 'SET_EXERCISES', payload: exercises });

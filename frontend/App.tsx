@@ -35,12 +35,10 @@ const AppNavigator: React.FC = () => {
   );
 };
 
-const App: React.FC = () => {
-  return (
-    <AppProvider>
-      <AppNavigator />
-    </AppProvider>
-  );
-};
+const App: React.FC = () => (
+  <AppProvider>
+    <AppNavigator />
+  </AppProvider>
+);
 
 export default App;

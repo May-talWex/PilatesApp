@@ -6,6 +6,7 @@ require('dotenv').config();
 
 const exerciseRoutes = require('./routes/exercises');
 const modificationRoutes = require('./routes/modifications');
+const injuryRoutes = require('./routes/injuries');
 const { swaggerDocument, swaggerUi, swaggerOptions } = require('./config/swagger');
 
 const app = express();
@@ -24,6 +25,7 @@ app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument, swaggerOp
 // Routes
 app.use('/api/exercises', exerciseRoutes);
 app.use('/api/modifications', modificationRoutes);
+app.use('/api/injuries', injuryRoutes);
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {

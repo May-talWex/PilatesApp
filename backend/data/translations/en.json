@@ -370,6 +370,138 @@
                 "shoulder_injury": "Push-up position stress",
                 "lower_back_injury": "Plank position"
             }
+        },
+        "ex_chest_lift": {
+            "name": "Chest Lift",
+            "description": "Basic abdominal curl without full head lift — accessible core strengthening",
+            "cues": [
+                "Nod chin gently toward chest",
+                "Lift shoulder blades off mat",
+                "Keep lower back imprinted throughout"
+            ],
+            "commonMistakes": ["Pulling on the neck", "Holding the breath"],
+            "concerns": {}
+        },
+        "ex_chest_expansion": {
+            "name": "Chest Expansion",
+            "description": "Standing arm pull-back to open the chest and strengthen the upper back",
+            "cues": [
+                "Stand tall with feet hip-width",
+                "Pull arms straight back pressing palms down",
+                "Lift through the crown and lengthen the neck"
+            ],
+            "commonMistakes": ["Shrugging the shoulders", "Arching the lower back"],
+            "concerns": {}
+        },
+        "ex_clam": {
+            "name": "Clam",
+            "description": "Side-lying hip external rotation to activate the gluteus medius",
+            "cues": [
+                "Stack hips and shoulders",
+                "Keep feet together, rotate top knee toward ceiling",
+                "Do not let the pelvis rock back"
+            ],
+            "commonMistakes": ["Rolling the pelvis backward", "Lifting the foot instead of rotating"],
+            "concerns": {}
+        },
+        "ex_dead_bug": {
+            "name": "Dead Bug",
+            "description": "Supine alternating arm and leg extension for deep core stability",
+            "cues": [
+                "Keep lower back imprinted throughout",
+                "Extend opposite arm and leg toward the floor",
+                "Exhale as you extend, inhale to return"
+            ],
+            "commonMistakes": ["Allowing the lower back to arch", "Moving too quickly"],
+            "concerns": {}
+        },
+        "ex_half_teaser": {
+            "name": "Half Teaser",
+            "description": "Teaser variation with one knee bent to reduce hip flexor demand",
+            "cues": [
+                "Keep one knee bent, foot on mat",
+                "Extend the other leg at 45 degrees",
+                "Roll up through the spine, reaching arms to the extended leg"
+            ],
+            "commonMistakes": ["Using momentum instead of control", "Collapsing the lower back at the top"],
+            "concerns": {}
+        },
+        "ex_knee_folds": {
+            "name": "Knee Folds",
+            "description": "Supine alternating knee-to-chest movement for gentle hip mobility",
+            "cues": [
+                "Imprint the lower back",
+                "Float one knee in at a time maintaining a neutral pelvis",
+                "Keep the movement slow and controlled"
+            ],
+            "commonMistakes": ["Rocking the pelvis", "Gripping in the hip flexors"],
+            "concerns": {}
+        },
+        "ex_oblique_prep": {
+            "name": "Oblique Prep",
+            "description": "Gentle rotational prep exercise to build oblique strength without full sit-up",
+            "cues": [
+                "Start in chest lift position",
+                "Rotate one elbow toward opposite knee",
+                "Keep the pelvis still"
+            ],
+            "commonMistakes": ["Pulling the neck forward", "Twisting the hips"],
+            "concerns": {}
+        },
+        "ex_seated_balance": {
+            "name": "Seated Balance",
+            "description": "V-sit hold to build core stability and balance without spinal loading",
+            "cues": [
+                "Sit tall and lean back slightly",
+                "Float feet off the mat",
+                "Hold the position and breathe"
+            ],
+            "commonMistakes": ["Rounding the lower back", "Holding the breath"],
+            "concerns": {}
+        },
+        "ex_seated_core_work": {
+            "name": "Seated Core Work",
+            "description": "Seated breathing and abdominal engagement for gentle core activation",
+            "cues": [
+                "Sit tall on sitting bones",
+                "Inhale to expand the ribs laterally",
+                "Exhale and gently draw navel to spine"
+            ],
+            "commonMistakes": ["Slouching during exhale", "Holding the breath"],
+            "concerns": {}
+        },
+        "ex_spine_twist": {
+            "name": "Spine Twist",
+            "description": "Seated rotational exercise for spinal mobility and oblique engagement",
+            "cues": [
+                "Sit tall with legs together",
+                "Rotate from the waist, keeping hips square",
+                "Pulse twice at the end range"
+            ],
+            "commonMistakes": ["Leaning to the side", "Letting one hip lift"],
+            "concerns": {}
+        },
+        "ex_swimming_prep": {
+            "name": "Swimming Prep",
+            "description": "Prone alternating arm and leg extension as a gentler back extension preparation",
+            "cues": [
+                "Lie prone with arms extended overhead",
+                "Lift one arm and opposite leg simultaneously",
+                "Keep both hip bones on the mat"
+            ],
+            "commonMistakes": ["Rotating the hips", "Over-lifting and compressing the lower back"],
+            "concerns": {}
+        },
+        "ex_toe_taps": {
+            "name": "Toe Taps",
+            "description": "Supine alternating leg lowering to tap the floor for core stability training",
+            "cues": [
+                "Keep lower back imprinted throughout",
+                "Lower one leg at a time to tap the floor",
+                "Exhale as the leg lowers, inhale to return"
+            ],
+            "commonMistakes": ["Allowing the lower back to arch", "Moving both legs at once"],
+            "concerns": {}
         }
     },
     "modifications": {
@@ -500,6 +632,14 @@
         "mod_knees_down": {
             "name": "Knees Down",
             "description": "Perform push-ups from knees"
+        },
+        "mod_bent_knee": {
+            "name": "Bent Knee",
+            "description": "Keep the working leg slightly bent throughout the movement to reduce strain"
+        },
+        "mod_hands_behind_thigh": {
+            "name": "Hands Behind Thigh",
+            "description": "Hold behind the thigh instead of the shin to reduce leverage and knee strain"
         }
     },
     "ui": {
