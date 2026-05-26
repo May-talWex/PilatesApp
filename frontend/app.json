@@ -3,6 +3,7 @@
     "name": "Pilates Instructor",
     "slug": "pilates-instructor",
     "version": "1.0.0",
+    "privacy": "public",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

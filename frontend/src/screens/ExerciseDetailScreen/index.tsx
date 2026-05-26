@@ -22,7 +22,7 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import { useApp } from '../../context/AppContext';
 import { useExerciseDetail } from '../../hooks/useExerciseDetail';
 import { Colors, Spacing, Typography, BorderRadius } from '../../constants/theme';
-import { getFlexDirection, getBackArrow } from '../../utils/rtl';
+import { getFlexDirection, getTextAlign, getBackArrow, isRTL } from '../../utils/rtl';
 import InjuryModificationCard from './InjuryModificationCard';
 
 const ExerciseDetailScreen: React.FC = () => {
@@ -33,12 +33,16 @@ const ExerciseDetailScreen: React.FC = () => {
 
   const { exercise, modifications, isLoading, error } = useExerciseDetail(exerciseId);
 
+  const textAlign = getTextAlign(language);
+  const flexDir = getFlexDirection(language);
+  const rtl = isRTL(language);
+
   if (isLoading) {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.centred}>
           <ActivityIndicator size="large" color={Colors.primary} />
-          <Text style={styles.loadingText}>
+          <Text style={[styles.loadingText, { textAlign }]}>
             {language === 'he' ? 'טוען פרטי התרגיל...' : 'Loading exercise details...'}
           </Text>
         </View>
@@ -50,7 +54,7 @@ const ExerciseDetailScreen: React.FC = () => {
     return (
       <SafeAreaView style={styles.container}>
         <View style={styles.centred}>
-          <Text style={styles.errorText}>
+          <Text style={[styles.errorText, { textAlign }]}>
             {language === 'he' ? 'התרגיל לא נמצא' : 'Exercise not found'}
           </Text>
         </View>
@@ -69,8 +73,8 @@ const ExerciseDetailScreen: React.FC = () => {
     <SafeAreaView style={styles.container}>
       {/* Exercise title */}
       <View style={styles.titleBlock}>
-        <Text style={styles.exerciseName}>{exercise.name}</Text>
-        <Text style={styles.exerciseDescription}>{exercise.description}</Text>
+        <Text style={[styles.exerciseName, { textAlign }]}>{exercise.name}</Text>
+        <Text style={[styles.exerciseDescription, { textAlign }]}>{exercise.description}</Text>
       </View>
 
       <ScrollView style={styles.scroll} showsVerticalScrollIndicator={false}>
@@ -78,7 +82,7 @@ const ExerciseDetailScreen: React.FC = () => {
         {/* ── Modifications first — most actionable during class ── */}
         {modifications.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
+            <Text style={[styles.sectionTitle, { textAlign }]}>
               {language === 'he' ? 'התאמות לפציעות' : 'Injury Modifications'}
             </Text>
             {modifications.map((mod, idx) => (
@@ -89,50 +93,53 @@ const ExerciseDetailScreen: React.FC = () => {
 
         {/* ── Exercise details ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
+          <Text style={[styles.sectionTitle, { textAlign }]}>
             {language === 'he' ? 'פרטי התרגיל' : 'Exercise Details'}
           </Text>
           {[
             { labelEn: 'Category',    labelHe: 'קטגוריה',  value: exercise.category },
             { labelEn: 'Difficulty',  labelHe: 'רמת קושי', value: exercise.difficulty },
             { labelEn: 'Duration',    labelHe: 'משך',       value: `${exercise.duration}s` },
-            { labelEn: 'Repetitions', labelHe: 'חזרות',    value: exercise.repetitions },
+            { labelEn: 'Repetitions', labelHe: 'חזרות',    value: String(exercise.repetitions) },
           ].map(row => (
-            <View key={row.labelEn} style={[styles.detailRow, { flexDirection: getFlexDirection(language) }]}>
-              <Text style={styles.detailLabel}>
+            <View key={row.labelEn} style={[styles.detailRow, { flexDirection: flexDir }]}>
+              <Text style={[styles.detailLabel, { textAlign }]}>
                 {language === 'he' ? row.labelHe : row.labelEn}:
               </Text>
-              <Text style={styles.detailValue}>{row.value}</Text>
+              <Text style={[styles.detailValue, { textAlign }]}>{row.value}</Text>
             </View>
           ))}
         </View>
 
         {/* ── Starting position ── */}
         <View style={styles.section}>
-          <Text style={styles.sectionTitle}>
+          <Text style={[styles.sectionTitle, { textAlign }]}>
             {language === 'he' ? 'תנוחת התחלה' : 'Starting Position'}
           </Text>
-          <Text style={styles.bodyText}>{exercise.startingPosition}</Text>
+          <Text style={[styles.bodyText, { textAlign }]}>{exercise.startingPosition}</Text>
         </View>
 
         {/* ── Equipment ── */}
         {exercise.equipment.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
+            <Text style={[styles.sectionTitle, { textAlign }]}>
               {language === 'he' ? 'ציוד נדרש' : 'Equipment'}
             </Text>
-            <Text style={styles.bodyText}>{exercise.equipment.join(', ')}</Text>
+            <Text style={[styles.bodyText, { textAlign }]}>{exercise.equipment.join(', ')}</Text>
           </View>
         )}
 
         {/* ── Key cues ── */}
         {exercise.cues.length > 0 && (
           <View style={styles.section}>
-            <Text style={styles.sectionTitle}>
+            <Text style={[styles.sectionTitle, { textAlign }]}>
               {language === 'he' ? 'רמזים חשובים' : 'Key Cues'}
             </Text>
             {exercise.cues.map((cue, idx) => (
-              <Text key={idx} style={styles.cue}>• {cue}</Text>
+              <View key={idx} style={[styles.cueRow, { flexDirection: flexDir }]}>
+                <Text style={styles.cueBullet}>•</Text>
+                <Text style={[styles.cueText, { textAlign }]}>{cue}</Text>
+              </View>
             ))}
           </View>
         )}
@@ -217,7 +224,18 @@ const styles = StyleSheet.create({
     color: Colors.textMuted,
     lineHeight: 24,
   },
-  cue: {
+  cueRow: {
+    gap: Spacing.sm,
+    alignItems: 'flex-start',
+  },
+  cueBullet: {
+    fontSize: Typography.md,
+    color: Colors.textMuted,
+    lineHeight: 24,
+    flexShrink: 0,
+  },
+  cueText: {
+    flex: 1,
     fontSize: Typography.md,
     color: Colors.textMuted,
     lineHeight: 24,

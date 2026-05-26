@@ -9,7 +9,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Colors, Spacing, Typography, Shadow, BorderRadius } from '../../constants/theme';
-import { getFlexDirection } from '../../utils/rtl';
+import { getFlexDirection, getTextAlign } from '../../utils/rtl';
 import SeverityBadge from '../../components/SeverityBadge';
 import { INJURY_DEFAULT_SEVERITY } from '../../constants/injuryGroups';
 import { Injury, Language } from '../../types';
@@ -28,6 +28,7 @@ const InjuryCheckCard: React.FC<InjuryCheckCardProps> = ({
   language,
 }) => {
   const defaultSeverity = INJURY_DEFAULT_SEVERITY[injury.id] ?? 'low';
+  const textAlign = getTextAlign(language);
 
   return (
     <TouchableOpacity
@@ -37,10 +38,10 @@ const InjuryCheckCard: React.FC<InjuryCheckCardProps> = ({
     >
       <View style={[styles.row, { flexDirection: getFlexDirection(language) }]}>
         <View style={styles.textBlock}>
-          <Text style={[styles.name, isSelected && styles.nameSelected]}>
+          <Text style={[styles.name, isSelected && styles.nameSelected, { textAlign }]}>
             {injury.name}
           </Text>
-          <Text style={[styles.description, isSelected && styles.descriptionSelected]}>
+          <Text style={[styles.description, isSelected && styles.descriptionSelected, { textAlign }]}>
             {injury.description}
           </Text>
         </View>
@@ -68,10 +69,10 @@ const styles = StyleSheet.create({
   row: {
     justifyContent: 'space-between',
     alignItems: 'center',
+    gap: Spacing.md,
   },
   textBlock: {
     flex: 1,
-    marginRight: Spacing.md,
     gap: Spacing.xs,
   },
   name: {

@@ -15,7 +15,7 @@ import ScreenHeader from '../../components/ScreenHeader';
 import RiskSummaryCard from './RiskSummaryCard';
 import ExerciseCard from './ExerciseCard';
 import { Colors, Spacing, Typography, BorderRadius } from '../../constants/theme';
-import { getBackArrow } from '../../utils/rtl';
+import { getBackArrow, getFlexDirection } from '../../utils/rtl';
 
 const ClassPlanScreen: React.FC = () => {
   const navigation = useNavigation();
@@ -65,7 +65,7 @@ const ClassPlanScreen: React.FC = () => {
         )}
       />
 
-      <View style={styles.footer}>
+      <View style={[styles.footer, { flexDirection: getFlexDirection(language) }]}>
         <TouchableOpacity style={styles.secondaryButton} onPress={() => navigation.goBack()}>
           <Text style={styles.secondaryButtonText}>
             {getBackArrow(language)} {language === 'he' ? 'שנה פציעות' : 'Change Injuries'}
@@ -95,7 +95,6 @@ const styles = StyleSheet.create({
     paddingTop: Spacing.md,
   },
   footer: {
-    flexDirection: 'row',
     gap: Spacing.md,
     padding: Spacing.lg,
     backgroundColor: Colors.cardBg,

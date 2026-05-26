@@ -4,16 +4,13 @@
  * Used in ExerciseDetailScreen to render the complete picture for a single
  * injury: severity badge, description, modification steps, and alternative
  * exercise if applicable.
- *
- * This was previously an inline .map() block inside ExerciseDetailScreen (~40 lines).
- * Extracting it makes each injury card independently readable and testable.
  */
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { Colors, Spacing, Typography, BorderRadius } from '../../constants/theme';
 import { getSeverityColor } from '../../utils/severity';
-import { getFlexDirection, getBorderAccentSide } from '../../utils/rtl';
+import { getFlexDirection, getTextAlign, getBorderAccentSide, isRTL } from '../../utils/rtl';
 import SeverityBadge from '../../components/SeverityBadge';
 import { ModificationResponse, Language } from '../../types';
 
@@ -28,28 +25,34 @@ const InjuryModificationCard: React.FC<InjuryModificationCardProps> = ({
 }) => {
   const accentColor = getSeverityColor(modification.severity);
   const accentBorder = getBorderAccentSide(language, 4);
+  const textAlign = getTextAlign(language);
+  const flexDir = getFlexDirection(language);
+  const rtl = isRTL(language);
 
   return (
     <View style={[styles.card, accentBorder, { borderLeftColor: accentColor, borderRightColor: accentColor }]}>
       {/* Header: injury name + severity badge */}
-      <View style={[styles.header, { flexDirection: getFlexDirection(language) }]}>
-        <Text style={styles.injuryName}>{modification.injuryName}</Text>
+      <View style={[styles.header, { flexDirection: flexDir }]}>
+        <Text style={[styles.injuryName, { textAlign }]}>{modification.injuryName}</Text>
         <SeverityBadge severity={modification.severity} language={language} size="sm" />
       </View>
 
       {/* Injury description */}
-      <Text style={styles.injuryDescription}>{modification.injuryDescription}</Text>
+      <Text style={[styles.injuryDescription, { textAlign }]}>{modification.injuryDescription}</Text>
 
       {/* Modification steps */}
       {modification.hasModifications && modification.modifications.length > 0 && (
         <View style={styles.modSection}>
-          <Text style={styles.modSectionTitle}>
+          <Text style={[styles.modSectionTitle, { textAlign }]}>
             {language === 'he' ? 'התאמות:' : 'Modifications:'}
           </Text>
           {modification.modifications.map((mod, idx) => (
-            <View key={`${mod.id}-${idx}`} style={styles.modItem}>
-              <Text style={styles.modName}>{mod.name}</Text>
-              <Text style={styles.modDescription}>{mod.description}</Text>
+            <View key={`${mod.id}-${idx}`} style={[styles.modItem, { flexDirection: flexDir }]}>
+              <Text style={styles.bullet}>•</Text>
+              <View style={styles.modTextWrap}>
+                <Text style={[styles.modName, { textAlign }]}>{mod.name}</Text>
+                <Text style={[styles.modDescription, { textAlign }]}>{mod.description}</Text>
+              </View>
             </View>
           ))}
         </View>
@@ -57,7 +60,7 @@ const InjuryModificationCard: React.FC<InjuryModificationCardProps> = ({
 
       {/* Recommendation: avoid */}
       {modification.recommendation === 'avoid_exercise' && (
-        <Text style={styles.avoidText}>
+        <Text style={[styles.avoidText, { textAlign }]}>
           {language === 'he' ? '⚠ יש להימנע מתרגיל זה' : '⚠ Avoid this exercise'}
         </Text>
       )}
@@ -65,11 +68,11 @@ const InjuryModificationCard: React.FC<InjuryModificationCardProps> = ({
       {/* Alternative exercise */}
       {modification.alternativeExercise && (
         <View style={styles.altBox}>
-          <Text style={styles.altLabel}>
+          <Text style={[styles.altLabel, { textAlign }]}>
             {language === 'he' ? 'תרגיל חלופי:' : 'Alternative exercise:'}
           </Text>
-          <Text style={styles.altName}>{modification.alternativeExercise.name}</Text>
-          <Text style={styles.altDescription}>{modification.alternativeExercise.description}</Text>
+          <Text style={[styles.altName, { textAlign }]}>{modification.alternativeExercise.name}</Text>
+          <Text style={[styles.altDescription, { textAlign }]}>{modification.alternativeExercise.description}</Text>
         </View>
       )}
     </View>
@@ -82,12 +85,12 @@ const styles = StyleSheet.create({
     borderRadius: BorderRadius.md,
     padding: Spacing.base,
     marginBottom: Spacing.md,
-    // Border width set dynamically via accentBorder in the component.
     gap: Spacing.sm,
   },
   header: {
     justifyContent: 'space-between',
     alignItems: 'center',
+    gap: Spacing.sm,
   },
   injuryName: {
     fontSize: Typography.md,
@@ -109,6 +112,17 @@ const styles = StyleSheet.create({
     color: Colors.primary,
   },
   modItem: {
+    gap: Spacing.xs,
+    alignItems: 'flex-start',
+  },
+  bullet: {
+    color: Colors.textMuted,
+    fontSize: Typography.base,
+    lineHeight: 20,
+    flexShrink: 0,
+  },
+  modTextWrap: {
+    flex: 1,
     gap: 2,
   },
   modName: {

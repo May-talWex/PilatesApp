@@ -10,7 +10,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import { Colors, Spacing, Typography, Shadow, BorderRadius, SeverityColors } from '../../constants/theme';
-import { getFlexDirection, getBorderAccentSide } from '../../utils/rtl';
+import { getFlexDirection, getTextAlign, getBorderAccentSide } from '../../utils/rtl';
 import SeverityBadge from '../../components/SeverityBadge';
 import ModificationPanel from './ModificationPanel';
 import { Exercise, InjuryConsideration, Language } from '../../types';
@@ -42,6 +42,8 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
   const hasModifications = modifications.length > 0;
   const accentBorder = getBorderAccentSide(language);
   const borderColor = SeverityColors[severity] ?? Colors.neutral;
+  const textAlign = getTextAlign(language);
+  const flexDir = getFlexDirection(language);
 
   return (
     <TouchableOpacity
@@ -50,14 +52,14 @@ const ExerciseCard: React.FC<ExerciseCardProps> = ({
       activeOpacity={0.85}
     >
       {/* ── Collapsed header (always visible) ── */}
-      <View style={[styles.header, { flexDirection: getFlexDirection(language) }]}>
+      <View style={[styles.header, { flexDirection: flexDir }]}>
         <View style={styles.info}>
-          <Text style={styles.name}>{exercise.name}</Text>
-          <View style={[styles.meta, { flexDirection: getFlexDirection(language) }]}>
-            <Text style={styles.metaText}>
+          <Text style={[styles.name, { textAlign }]}>{exercise.name}</Text>
+          <View style={[styles.meta, { flexDirection: flexDir }]}>
+            <Text style={[styles.metaText, { textAlign }]}>
               {language === 'he' ? 'משך' : 'Duration'}: {exercise.duration}s
             </Text>
-            <Text style={styles.metaText}>
+            <Text style={[styles.metaText, { textAlign }]}>
               {language === 'he' ? 'חזרות' : 'Reps'}: {exercise.repetitions}
             </Text>
             {hasModifications && (
@@ -100,10 +102,10 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: 'space-between',
     alignItems: 'flex-start',
+    gap: Spacing.sm,
   },
   info: {
     flex: 1,
-    marginRight: Spacing.sm,
     gap: Spacing.xs,
   },
   name: {

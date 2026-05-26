@@ -8,8 +8,9 @@
 
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
-import { Colors, SeverityColors, Spacing, Typography, BorderRadius } from '../../constants/theme';
+import { Colors, Spacing, Typography, BorderRadius } from '../../constants/theme';
 import { getSeverityColor, getSeverityText } from '../../utils/severity';
+import { getFlexDirection, getTextAlign, isRTL } from '../../utils/rtl';
 import { InjuryConsideration, Exercise, Language } from '../../types';
 
 interface ModificationPanelProps {
@@ -28,6 +29,10 @@ const ModificationPanel: React.FC<ModificationPanelProps> = ({
 }) => {
   if (modifications.length === 0) return null;
 
+  const textAlign = getTextAlign(language);
+  const flexDir = getFlexDirection(language);
+  const rtl = isRTL(language);
+
   return (
     <View style={styles.panel}>
       {modifications.map((consideration, idx) => {
@@ -39,28 +44,39 @@ const ModificationPanel: React.FC<ModificationPanelProps> = ({
 
         return (
           <View key={`${consideration.injuryId}-${idx}`} style={styles.considerationBlock}>
-            {/* Injury name + severity */}
-            <View style={styles.injuryHeader}>
+            {/* Injury name + severity — RTL-aware row */}
+            <View style={[styles.injuryHeader, { flexDirection: flexDir }]}>
               <View style={[styles.severityDot, { backgroundColor: color }]} />
-              <Text style={[styles.injuryName, { color }]}>{consideration.injuryName}</Text>
+              <Text style={[styles.injuryName, { color, textAlign }]}>
+                {consideration.injuryName}
+              </Text>
               <Text style={[styles.severityLabel, { color }]}> · {severityLabel}</Text>
             </View>
 
             {/* High severity with no modifications */}
-            {consideration.severity === 'high' && consideration.modifications.length === 0 && !altExercise && (
-              <Text style={styles.skipWarning}>
-                {language === 'he' ? '⚠ דלג / השתמש בחלופה' : '⚠ Skip / Use alternative'}
-              </Text>
-            )}
+            {consideration.severity === 'high' &&
+              consideration.modifications.length === 0 &&
+              !altExercise && (
+                <Text style={[styles.skipWarning, { textAlign }]}>
+                  {language === 'he' ? '⚠ דלג / השתמש בחלופה' : '⚠ Skip / Use alternative'}
+                </Text>
+              )}
 
             {/* Modification bullets */}
             {consideration.modifications.map((mod, modIdx) => (
-              <View key={`${mod.id}-${modIdx}`} style={styles.modRow}>
+              <View
+                key={`${mod.id}-${modIdx}`}
+                style={[
+                  styles.modRow,
+                  { flexDirection: flexDir },
+                  rtl ? { paddingRight: Spacing.md } : { paddingLeft: Spacing.md },
+                ]}
+              >
                 <Text style={styles.bullet}>•</Text>
                 <View style={styles.modTextWrap}>
-                  <Text style={styles.modName}>{mod.name}</Text>
+                  <Text style={[styles.modName, { textAlign }]}>{mod.name}</Text>
                   {mod.description ? (
-                    <Text style={styles.modDescription}>{mod.description}</Text>
+                    <Text style={[styles.modDescription, { textAlign }]}>{mod.description}</Text>
                   ) : null}
                 </View>
               </View>
@@ -68,21 +84,29 @@ const ModificationPanel: React.FC<ModificationPanelProps> = ({
 
             {/* Alternative exercise box */}
             {altExercise && (
-              <View style={styles.altBox}>
-                <Text style={styles.altLabel}>
+              <View
+                style={[
+                  styles.altBox,
+                  rtl ? { marginRight: Spacing.md } : { marginLeft: Spacing.md },
+                ]}
+              >
+                <Text style={[styles.altLabel, { textAlign }]}>
                   {language === 'he' ? 'תרגיל חלופי' : 'Alternative exercise'}:
                 </Text>
-                <Text style={styles.altName}>{altExercise.name}</Text>
+                <Text style={[styles.altName, { textAlign }]}>{altExercise.name}</Text>
               </View>
             )}
           </View>
         );
       })}
 
-      {/* Link to full detail screen */}
-      <TouchableOpacity onPress={onFullDetails} style={styles.fullDetailsLink}>
+      {/* Link to full detail screen — on the reading-start edge */}
+      <TouchableOpacity
+        onPress={onFullDetails}
+        style={[styles.fullDetailsLink, { alignSelf: rtl ? 'flex-start' : 'flex-end' }]}
+      >
         <Text style={styles.fullDetailsText}>
-          {language === 'he' ? 'פרטים מלאים ←' : 'Full details →'}
+          {language === 'he' ? '← פרטים מלאים' : 'Full details →'}
         </Text>
       </TouchableOpacity>
     </View>
@@ -100,23 +124,25 @@ const styles = StyleSheet.create({
     gap: Spacing.xs,
   },
   injuryHeader: {
-    flexDirection: 'row',
     alignItems: 'center',
+    gap: Spacing.xs,
     marginBottom: Spacing.xs,
   },
   severityDot: {
     width: 8,
     height: 8,
     borderRadius: 4,
-    marginRight: Spacing.xs,
+    flexShrink: 0,
   },
   injuryName: {
     fontSize: Typography.base,
     fontWeight: '700',
+    flex: 1,
   },
   severityLabel: {
     fontSize: Typography.sm,
     fontWeight: '500',
+    flexShrink: 0,
   },
   skipWarning: {
     color: Colors.danger,
@@ -124,15 +150,14 @@ const styles = StyleSheet.create({
     fontWeight: '600',
   },
   modRow: {
-    flexDirection: 'row',
     alignItems: 'flex-start',
-    paddingLeft: Spacing.md,
     gap: Spacing.xs,
   },
   bullet: {
     color: Colors.textMuted,
     fontSize: Typography.base,
     lineHeight: 20,
+    flexShrink: 0,
   },
   modTextWrap: {
     flex: 1,
@@ -152,7 +177,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.altExerciseBg,
     borderRadius: BorderRadius.sm,
     padding: Spacing.sm,
-    marginLeft: Spacing.md,
   },
   altLabel: {
     fontSize: Typography.sm,
@@ -166,7 +190,6 @@ const styles = StyleSheet.create({
     color: Colors.textPrimary,
   },
   fullDetailsLink: {
-    alignSelf: 'flex-end',
     paddingTop: Spacing.xs,
   },
   fullDetailsText: {
